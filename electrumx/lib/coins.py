@@ -557,6 +557,25 @@ class BitcoinSV(BitcoinMixin, Coin):
     ]
     GENESIS_ACTIVATION = 620_538
 
+class BitcoinGlobal(BitcoinMixin, Coin):
+    NAME = "BitcoinGlobal"
+    SHORTNAME = "BG"
+    TX_COUNT = 267318795
+    TX_COUNT_HEIGHT = 557037
+    TX_PER_BLOCK = 100
+    P2PKH_VERBYTE = bytes.fromhex("26")
+    P2SH_VERBYTES = [bytes.fromhex("17")]
+    PEERS = []
+    PEER_DEFAULT_PORTS = {'t': '50001', 's': '50002'}
+
+class BitcoinSVTestnet(BitcoinTestnetMixin, Coin):
+    '''Bitcoin Testnet for Bitcoin SV daemons.'''
+    NAME = "BitcoinGlobal"
+    SHORTNAME = "TBG"
+    PEERS = []
+    PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
+
+
 
 class BitcoinCash(BitcoinMixin, Coin):
     NAME = "BitcoinCashABC"   # Some releases later remove the ABC suffix
