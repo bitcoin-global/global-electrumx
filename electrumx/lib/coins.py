@@ -795,6 +795,7 @@ class BitcoinGlobal(BitcoinMixin, Coin):
     P2PKH_VERBYTE = bytes.fromhex("26")
     P2SH_VERBYTES = [bytes.fromhex("17")]
     PEERS = []
+    DESERIALIZER = lib_tx.DeserializerSegWit
     PEER_DEFAULT_PORTS = {'t': '50001', 's': '50002'}
 
 class BitcoinGlobalTestnet(BitcoinTestnetMixin, Coin):
@@ -802,6 +803,7 @@ class BitcoinGlobalTestnet(BitcoinTestnetMixin, Coin):
     NAME = "BitcoinGlobal"
     SHORTNAME = "TBG"
     PEERS = []
+    DESERIALIZER = lib_tx.DeserializerSegWit
     PEER_DEFAULT_PORTS = {'t': '51001', 's': '51002'}
 
 
